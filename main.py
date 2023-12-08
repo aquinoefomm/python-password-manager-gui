@@ -42,10 +42,7 @@ def search():
         except FileNotFoundError:
             messagebox.showwarning(title="Warning!", message="No data file found!")
         else:
-            website_list = []
-            for key in data:
-                website_list.append(key)
-            if website_entry.get() in website_list:
+            if website_entry.get() in data:
                 messagebox.showinfo(message=f"Email:{data[website_entry.get()]['email']} \n "
                                             f"Password:{data[website_entry.get()]['password']}")
             else:
